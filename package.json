@@ -1,18 +1,18 @@
 {
-  "name": "8.3-travel-tracker",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "type": "module",
+  "name": "travel-tracker",
+  "version": "2.0.0",
+  "description": "Full-stack Travel Tracker (React + Express + PostgreSQL)",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "concurrently -n server,client -c blue,green \"npm run dev --prefix server\" \"npm run dev --prefix client\"",
+    "dev:server": "npm run dev --prefix server",
+    "dev:client": "npm run dev --prefix client",
+    "build": "npm run build --prefix client",
+    "start": "npm run start --prefix server",
+    "install:all": "npm install && npm install --prefix server && npm install --prefix client",
+    "lint": "npm run lint --prefix client"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "dotenv": "^17.4.2",
-    "express": "^4.18.2",
-    "pg": "^8.11.3"
+  "devDependencies": {
+    "concurrently": "^8.2.2"
   }
 }
